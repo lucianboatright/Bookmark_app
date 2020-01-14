@@ -1,13 +1,18 @@
-
+require 'pg'
 
 class Bookmarks 
 
   def initialize
-    @bookmark_log = ['Netflix','BBC']
+    @bookmark_log = []
   end
 
   def all 
-    @bookmark_log.join("\\n")
+    connection = PG.connect(:dbname => 'bookmark_manager')
+
+    result = connection.exec('SELECT * FROM bookmarks;') 
+
+    result.map{ |bookmark| bookmark['url'] }
+
   end
 
 
