@@ -1,6 +1,7 @@
 require_relative '../../lib/bookmarks.rb'
 
 describe Bookmarks do
+
   describe '#all' do
     it 'shows all bookmarks' do
       connection = PG.connect(:dbname => 'bookmark_manager_test')
