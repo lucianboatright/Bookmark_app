@@ -8,5 +8,12 @@ describe Bookmarks do
       expect(subject.all).to include 'http://www.bbc.com'
     end
   end
+
+  describe '#add' do
+    it 'added bookmarks are stores in database' do
+      subject.add('http://www.bunnies.com')
+      expect(subject.all).to include 'http://www.bunnies.com'
+    end
+  end
 end
 

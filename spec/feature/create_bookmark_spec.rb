@@ -3,6 +3,6 @@ feature 'Create New Bookmark' do
     visit '/'
     fill_in 'url', with: 'http://www.dogs.com'
     click_button 'Add'
-    expect(page).to have_connect 'http://www.dogs.com'
+    expect(page).to have_content 'http://www.dogs.com'
   end
 end
