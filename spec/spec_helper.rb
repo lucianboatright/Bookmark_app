@@ -7,7 +7,7 @@
 
 # Set the environment to test
 ENV['RACK_ENV'] = 'test'
-
+ENV[ 'DATABASE' ] = 'test'
 # Bring in the contents of the app.rb file. the below equivalent to require_relative
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
