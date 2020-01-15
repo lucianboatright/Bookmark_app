@@ -24,6 +24,7 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'connect_and_clear_db'
 
 # Tell capbara to talk to BookmarkManager
 Capybara.app = BookmarkManager
