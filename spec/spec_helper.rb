@@ -11,7 +11,6 @@ ENV[ 'DATABASE' ] = 'test'
 # Bring in the contents of the app.rb file. the below equivalent to require_relative
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
-
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
 # will add to the boot time of your test suite on EVERY test run, even for an
@@ -114,4 +113,8 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  config.before(:each) do
+    connect_and_clear_db
+  end
 end
